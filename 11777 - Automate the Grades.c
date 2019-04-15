@@ -1,35 +1,33 @@
-#include<stdio.h>
-int main()
+#include <stdio.h>
+
+int main(void)
 {
-    int n,sum=0,sideCheck=0,lastFinalResult=0;
-    int a,b,c,d, d1,d2,d3;
-    scanf("%d",&n);
-    for(int i = 1; i<=n; i++)
+    int s, n, i, t1,t2,f,a,c1,c2,c3,k;
+    while (scanf("%d",&n)==1)
     {
-        scanf("%d%d%d%d %d%d%d",&a,&b,&c,&d, &d1,&d2,&d3);
-
-        sum = a+b+c+d;
-
-        if(d1<=d2 && d1<=d3)
-            sideCheck = ((d2 + d3) / 2);
-        else if(d2<=d1 && d2<=d3)
-            sideCheck = ((d1 + d3) / 2);
-        else if(d3<=d1 && d3<=d2)
-            sideCheck = ((d1 + d2) / 2);
-
-        lastFinalResult = sum + sideCheck;
-
-        if(lastFinalResult >= 90)
-            printf("Case %d: A\n",i);
-        else if(lastFinalResult >=80 && lastFinalResult<90)
-            printf("Case %d: B\n",i);
-        else if(lastFinalResult>=70 && lastFinalResult<80)
-            printf("Case %d: C\n",i);
-        else if(lastFinalResult>=60 && lastFinalResult<70)
-            printf("Case %d: D\n",i);
-        else if(lastFinalResult<60)
-            printf("Case %d: F\n",i);
-
+        s=0;
+        for(i=1; i<=n; i++)
+        {
+            scanf("%d%d%d%d%d%d%d",&t1,&t2,&f, &a, &c1,&c2,&c3);
+            if(c1<=c2&&c1<=c3)
+                k=(c2+c3)/2;
+            else if(c2<=c1&&c2<=c3)
+                k=(c1+c3)/2;
+            else if(c3<=c1&&c3<=c2)
+                k=(c1+c2)/2;
+            s=t1+t2+f+a+k;
+            if(s>=90)
+                printf("Case %d: A\n",i);
+            else if(s>=80 && s<90)
+                printf("Case %d: B\n",i);
+            else if(s>=70 && s<80)
+                printf("Case %d: C\n",i);
+            else if(s>=60 && s<70)
+                printf("Case %d: D\n",i);
+            else if(s<60)
+                printf("Case %d: F\n",i);
+        }
     }
     return 0;
 }
+
